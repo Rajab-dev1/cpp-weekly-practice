@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+	private:
+		int a;
+		public:
+			void in()
+			{
+				cout<<" Enter the value of A = ";
+				cin>>a;
+			}
+			void out()
+			{
+				cout<<"The value of A = "<<a<<endl;
+			}
+};
+class B
+{
+	private:
+		int b;
+		public:
+			void input()
+			{
+				cout<<" Enter the value of B = ";
+				cin>>b;
+			}
+			void output()
+			{
+				cout<<"The value of B = "<<b<<endl;
+			}
+};
+class C:public A, public B
+{
+	private:
+		int c;
+		public:
+			void Getin()
+			{
+				A::in();
+				B::input();
+				cout<<" Enter the value of C = ";
+				cin>>c;
+			}
+			void Getout()
+			{
+				A::out();
+				B::output();
+				cout<<"The value of C = "<<c<<endl;
+			}
+};
+int main()
+{
+	C obj;
+	obj.Getin();
+	obj.Getout();
+}
