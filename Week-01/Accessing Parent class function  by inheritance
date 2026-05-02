@@ -1,0 +1,70 @@
+@@ -0,0 +1,69 @@
+#include<iostream>
+using namespace std;
+
+class Person
+{
+	protected:
+		int id;
+		char name[50], adress[50];
+		
+		public:
+			person()
+			{
+				id=0;
+				name[0]='\0';
+				adress[0]='\0';
+			}
+			void Getinfo()
+			{
+				cout<<" Enter the id of person = ";
+				cin>>id;
+					cout<<" Enter the name of person = ";
+				cin>>name;
+					cout<<" Enter the adress of person = ";
+				cin>>adress;
+			}
+			void Showinfo()
+			{
+				cout<<" The personl info of the person as :";
+				cout<<"\n ID of the person is = "<<id<<endl;
+				cout<<"\nName of the person is = "<<name<<endl;
+				cout<<"\n Adress the person is = "<<adress<<endl;
+				
+			}
+			
+};
+class Student: public Person 
+{
+	private:
+		int rollno;
+		int marks;
+		public:
+			Student(){
+			
+				Student::Person();
+				rollno=marks=0;
+			}
+			void getedu()
+			{
+			  cout<<" Enter the roll no =";
+			  cin>>rollno;
+			  cout<<" Enter the marks of student = ";
+			  cin>>marks;	
+			}
+			void Showedu()
+			{
+				cout<<" The Educational details are :"<<endl;
+					cout<<" The  Roll no is :"<<rollno<<endl;
+						cout<<" Marks are :"<<marks<<endl;
+			}
+};
+int main()
+{
+	Student s1;
+	s1.Getinfo();
+	s1.Showinfo();
+	s1.getedu();
+	s1.Showedu();
+	
+}
