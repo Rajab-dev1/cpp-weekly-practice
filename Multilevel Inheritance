@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+class A 
+{
+	private:
+		int a;
+		public:
+			void in()
+			{
+				cout<<" Enter the value of A : ";
+				cin>>a;
+			}
+			void out()
+			{
+				cout<<" The value of A = "<<a<<endl;
+			}
+};
+class B: public A
+{
+	private:
+		int b;
+		public:
+			void in()
+			{
+				A::in();
+				cout<<" Enter the value of B: ";
+				cin>>b;
+			}
+			void out()
+			{ 
+			    A::out();
+				cout<<" The value of B = "<<b<<endl;
+			}
+};
+class C : public B
+{
+	private:
+		int c;
+		public:
+			void in()
+			{
+				B::in();
+				cout<<" Enter the value of C: ";
+				cin>>c;
+			}
+			void out()
+			{ 
+			    B::out();
+				cout<<" The value of C = "<<c<<endl;
+			}
+};
+int main()
+{
+	C obj;
+	obj.in();
+	obj.out();
+	
+}
